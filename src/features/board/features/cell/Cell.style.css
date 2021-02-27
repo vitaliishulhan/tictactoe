@@ -1,0 +1,12 @@
+.tictactoe-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+}
+
+.tictactoe-wincells {
+    background-color: rgb(16, 146, 48);
+}
