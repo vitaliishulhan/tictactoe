@@ -1,3 +1,8 @@
+:root {
+  --cell-bg-color: rgb(141, 30, 135);
+  --board-size: 400px;
+}
+
 .App {
   text-align: center;
 }

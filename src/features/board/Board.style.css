@@ -1,16 +1,7 @@
-:root {
-    --board-size: 400px;
-    --border-color: rgb(141, 30, 135);
-}
-
 .tictactoe-board {
-    border: 2px solid var(--border-color);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     width: var(--board-size);
     height: var(--board-size);
-    background-color: rgb(238, 238, 238);
-    margin: calc(50vh - (var(--board-size) / 2)) auto;
-    color: var(--border-color)
 }
