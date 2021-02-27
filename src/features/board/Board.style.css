@@ -1,7 +1,3 @@
 .tictactoe-board {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: var(--board-size);
-    height: var(--board-size);
 }

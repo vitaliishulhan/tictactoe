@@ -8,31 +8,38 @@ export interface fillCellAction {
     }
 }
 
-export interface State {
-    board: {
-        values: string[]
-    }
-}
-
 const boardSlice = createSlice({
     name: 'board',
     initialState: {
-        values: new Array(9).fill('') as string[]
+        values: new Array(9).fill('') as string[],
+        size: 3
     },
     reducers: {
         fillCell: (state, {payload: {id, value}}: fillCellAction) => {
             state.values[id] = value
         },
         emptyCells: state => {
-            state.values = new Array(9).fill('') as string[]
+            state.values = new Array(state.size**2).fill('') as string[]
+        },
+        incrementSize: state => {
+            if (state.size != 9) {
+                state.size++
+                state.values = new Array(state.size**2).fill('')
+            }
+        },
+        decrementSize: state => {
+            if (state.size != 3) {
+                state.size--;
+                state.values = new Array(state.size**2).fill('')
+            }
         }
     }
 })
 
-export const { fillCell, emptyCells } = boardSlice.actions;
+export const { fillCell, emptyCells, incrementSize, decrementSize } = boardSlice.actions;
 
 export const selectValues = (state: {board: {values: string[]}}) => state.board.values
-export const selectValueById = (id: number) => (state: unknown) => (state as State).board.values[id]
+export const selectValueById = (id: number) => (state: {board: {values: string[]}}) => state.board.values[id]
 export const selectValuesIdsBySign = (sign: string)  => (state: {board: {values: string[]}}) => {
     const res = [] as number[]
     for (let [index, value] of Object.entries(state.board.values)) {
@@ -43,5 +50,6 @@ export const selectValuesIdsBySign = (sign: string)  => (state: {board: {values:
     
     return res
 }
+export const selectSize = (state: {board: {size: number}}) => state.board.size
 
 export default boardSlice.reducer;

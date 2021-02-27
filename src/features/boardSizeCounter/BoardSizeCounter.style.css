@@ -1,0 +1,39 @@
+.tictactoe-board-size-counter {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tictactoe-board-size-counter>span {
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+.tictactoe-board-size-counter>.counter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    align-items: center;
+}
+
+.tictactoe-board-size-counter>.counter>div {
+    line-height: 2.4rem;
+}
+
+.tictactoe-board-size-counter>.counter>.size {
+    margin: 0 .5rem;
+}
+
+.tictactoe-board-size-counter>.counter>.plus,
+.tictactoe-board-size-counter>.counter>.minus {
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    box-shadow: 0 0 5px -2px #000;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}

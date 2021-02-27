@@ -30,7 +30,6 @@ export default function Cell({id, onClick, win}: CellProps) {
                     setIsClicked(previous => false)
                 }, 1000)
             } else {
-                console.log('hello')
                 onClick(id)
                 setIsClicked(previous => true)
                 setClassNameForAnimation('animate__bounceIn')
