@@ -58,6 +58,7 @@ export default function Board() {
             dispatch(write(`Player ${real_role} is winner`))
             dispatch(incrementWon(real_role))
             setOpen(true)
+            return
         }
 
         if (!values.filter(item => !item).length) {
